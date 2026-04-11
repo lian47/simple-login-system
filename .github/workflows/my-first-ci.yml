@@ -1,0 +1,21 @@
+name: CI de teste da Tela de Login
+
+on:
+  push:
+    branches["main"]
+
+jobs:
+  verificacao:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixando o código no servidor
+      uses: actions/checkout@v4
+
+    - name: Simulando a Fase de Build
+      [cite_start]run: echo "Compilando os arquivos da tela de login..."
+
+    - name: Simulando a Fase de Teste
+      run: |
+        echo "Verificando se o HTML está correto..."
+        echo "Tudo certo! Nenhum bug encontrado." # [cite: 84, 85]
