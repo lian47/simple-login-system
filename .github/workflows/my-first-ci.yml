@@ -1,8 +1,8 @@
-name: CI de teste da Tela de Login
+name: CI de Teste da Tela de Login
 
 on:
   push:
-    branches["main"]
+    branches: [ "main" ]
 
 jobs:
   verificacao:
@@ -13,9 +13,9 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Simulando a Fase de Build
-      [cite_start]run: echo "Compilando os arquivos da tela de login..."
+      run: echo "Compilando os arquivos da tela de login..."
 
     - name: Simulando a Fase de Teste
       run: |
         echo "Verificando se o HTML está correto..."
-        echo "Tudo certo! Nenhum bug encontrado." # [cite: 84, 85]
+        echo "Tudo certo! Nenhum bug encontrado."
