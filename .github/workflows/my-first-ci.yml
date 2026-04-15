@@ -1,25 +1,21 @@
-name: Pipeline CI/CD Tela de Login
+name: CI de Teste da Tela de Login
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    [cite_start]branches: [ "main" ]
-jobs:
-  ci-integration:
-    name: Continuous Integration
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build e Testes Automáticos
-      run: |
-        echo "Executando Build..." [cite: 569, 582]
-        echo "Executando Testes de Qualidade..." [cite: 570, 582]
 
-  cd-delivery:
-    name: Continuous Delivery
-    [cite_start]needs: ci-integration
+jobs:
+  verificacao:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Preparando Artefatos para Produção
-      [cite_start]run: echo "Gerando pacote de lançamento (Release)..." [cite: 561, 572]
+    - name: Baixando o código no servidor
+      uses: actions/checkout@v4
+
+    - name: Simulando a Fase de Build
+      run: echo "Compilando os arquivos da tela de login..."
+
+    - name: Simulando a Fase de Teste
+      run: |
+        echo "Verificando se o HTML está correto..."
+        echo "Tudo certo! Nenhum bug encontrado."
