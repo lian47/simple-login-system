@@ -15,12 +15,12 @@ jobs:
     - name: Build e Testes Automáticos
       run: |
         echo "Executando Build..."
-        echo "Executando Testes de Qualidade no HTML e CSS..." [cite: 582]
+        echo "Executando Testes de Qualidade no HTML e CSS..."
 
   cd-delivery:
     name: Continuous Delivery
-    [cite_start]needs: ci-integration 
+    needs: ci-integration
     runs-on: ubuntu-latest
     steps:
     - name: Preparando Artefatos para Lançamento
-      [cite_start]run: echo "Gerando pacote de deploy (Release)..." [cite: 561, 582]
+      run: echo "Gerando pacote de deploy (Release)..."
