@@ -4,7 +4,8 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    [cite_start]branches: [ "main" ]
+    branches: [ "main" ]
+
 jobs:
   ci-integration:
     name: Continuous Integration
@@ -13,13 +14,13 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build e Testes Automáticos
       run: |
-        echo "Executando Build..." [cite: 569, 582]
-        echo "Executando Testes de Qualidade..." [cite: 570, 582]
+        echo "Executando Build..."
+        echo "Executando Testes de Qualidade no HTML e CSS..."
 
   cd-delivery:
     name: Continuous Delivery
-    [cite_start]needs: ci-integration
+    needs: ci-integration
     runs-on: ubuntu-latest
     steps:
-    - name: Preparando Artefatos para Produção
-      [cite_start]run: echo "Gerando pacote de lançamento (Release)..." [cite: 561, 572]
+    - name: Preparando Artefatos para Lançamento
+      run: echo "Gerando pacote de deploy (Release)..."
